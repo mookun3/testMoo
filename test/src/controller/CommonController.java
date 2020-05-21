@@ -13,7 +13,12 @@ public class CommonController {
 	// TEST 
 	private static final String SERVER_NAME_TAG_2 = "2";
 	
+	// SERVER_NAME_TAG 3¹ø
+	private static final String SERVER_NAME_TAG_3 = "3";
+	
 	// USER NAME SAMPLE
 	private static final String USER_NAME_SAMPLE = "SYSTEM";
+	
+	
 
 }
