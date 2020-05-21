@@ -10,6 +10,10 @@
 
     <div>{{text}}</div>
     
+    <dl th:each="str : ${list}">
+        <dd th:text="${str}"></dd>
+    </dl>
+    
 </div>
 </body>
 
