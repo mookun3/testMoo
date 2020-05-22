@@ -28,7 +28,7 @@ public class TestController {
 		return "test";
 	}
 	
-	@RequestMapping(value = "/ajaxCallTest")
+	@RequestMapping(value = "/ajaxCallTest1")
 	public @ResponseBody HashMap<String, Object> ajaxCallTest() {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
@@ -39,6 +39,22 @@ public class TestController {
 		list.add("B");
 		list.add("C");
 		list.add("D");
+		
+		map.put("list", list);
+		
+		return map;
+	}
+	
+	@RequestMapping(value = "/ajaxCallTest2")
+	public @ResponseBody HashMap<String, Object> ajaxCallTest2() {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		List<String> list = new ArrayList<>();
+		
+		list.add("B");
+		list.add("L");
+		list.add("Y");
+		list.add("C");
 		
 		map.put("list", list);
 		
