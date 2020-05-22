@@ -1,5 +1,0 @@
-spring:
-  mvc:
-    static-path-pattern: /resources/**
-    
-server:  port: 8081
