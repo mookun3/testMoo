@@ -28,7 +28,7 @@ public class TestController {
 		return "test";
 	}
 	
-	@RequestMapping(value = "/ajaxCallTest1")
+	@RequestMapping(value = "/ajaxCallTest1", method = RequestMethod.GET)
 	public @ResponseBody HashMap<String, Object> ajaxCallTest() {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
@@ -45,7 +45,7 @@ public class TestController {
 		return map;
 	}
 	
-	@RequestMapping(value = "/ajaxCallTest2")
+	@RequestMapping(value = "/ajaxCallTest2", method = RequestMethod.GET)
 	public @ResponseBody HashMap<String, Object> ajaxCallTest2() {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
