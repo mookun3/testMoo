@@ -15,13 +15,16 @@
         <dd th:text="${str}"></dd>
     </dl>
 
+    <h2>값이 A이면 제외 처리</h2>
     <dl v-for="(obj, idx) in list">
-        <dd v-if="obj != 'A'">v-for / v-if 테스트 입니다 !!! {{idx}} : {{obj}}</dd>
+        <dd v-if="obj != 'A'">v-for / v-if 테스트 입니다 !!!{{idx}} : {{obj}}</dd>
     </dl>
     
     <button v-on:click="testMethod()">v-on:click</button>
     
+    <h2>클릭 시 화면 데이터 변경</h2>
     <button v-on:click="getListData()">getListData</button>
+    
 </div>
 </body>
 
