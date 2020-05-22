@@ -3,4 +3,5 @@ spring:
     static-path-pattern: /resources/**
   devtools:    livereload:      enabled: true
   freemarker:    cache: false
+  thymeleaf:    cache: false
 server:  port: 8081
