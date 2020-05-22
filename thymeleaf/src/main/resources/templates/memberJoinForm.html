@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="/resources/js/vue.js"></script>
+	</head>
+	<body>
+		<div id="testDiv">
+			<input type="text" v-on:keyup.enter="eventConsole">
+			<input type="text" placeholder="event keycode 확인" v-on:keyup.stop="checkEventCode($event)">
+			
+			<br><br>
+			
+			<button v-on:click="checkClick">클릭버어어어어튼</button>
+			<button v-on:click.once="checkClick">클릭버어어어어튼2</button>
+			
+			<br><br>
+			
+			<button @click="checkClick">클릭버어어어어튼3</button>
+			<button @click.once="checkClick">클릭버어어어어튼4</button>
+			
+			<br><br>
+			
+			<button @click="checkClickEvent($event)">클릭버어어어어튼5</button>
+		
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+	var test = new Vue({
+		el : "#testDiv",
+		methods : {
+			
+			eventConsole : function(){
+				console.log("EVENT");
+			},
+			
+			checkEventCode : function(event){
+				console.log(event);
+				alert(event.keyCode);
+			},
+			
+			checkClick : function(){
+				console.log("click event");
+			},
+			
+			checkClickEvent : function(event){
+				console.log("check click event");
+				console.log(event);
+			}
+			
+			
+		}
+	});
+	
+	
+	</script>
+</html>
+
+
