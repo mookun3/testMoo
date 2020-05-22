@@ -14,14 +14,12 @@
     <dl th:each="str : ${list}">
         <dd th:text="${str}"></dd>
     </dl>
-    {{list}}
-    
-    <div>vue for</div>
+
     <dl v-for="(obj, idx) in list">
-    
-        <dd>{{idx}} : {{obj}}</dd>
+        <dd v-if="obj == 'A'">v-for / v-if 테스트 입니다 !!! {{idx}} : {{obj}}</dd>
     </dl>
     
+    <button v-on:click="testMethod()">v-on:click</button>
 </div>
 </body>
 
@@ -33,17 +31,22 @@ var app = new Vue({
 	data: {
 		text: "테스트 중입니다. 수정사항 재확인 부탁드립니다.",
 		list: []
-	}	
-});
-
-
-$.ajax({
-     type:"GET",
-     url:"/ajaxCallTest",
-     dataType:"JSON", 
-     success : function(data) {
-            app.list = data.list;
-     }
+	},
+	methods: {
+		testMethod: function() {
+			console.log("testMethod");
+		}
+	},
+	created: function() {
+		$.ajax({
+		    type:"GET",
+		    url:"/ajaxCallTest",
+		    dataType:"JSON", 
+		    success : function(data) {
+		           app.list = data.list;
+		    }
+		});
+	}
 });
 
 
