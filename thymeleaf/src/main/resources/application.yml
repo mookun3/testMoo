@@ -1,7 +1,18 @@
 spring:
   mvc:
     static-path-pattern: /resources/**
+    view:
+      prefix: /resources/templates/
+      suffix: .html
   devtools:    livereload:      enabled: true
   freemarker:    cache: false
-  thymeleaf:    cache: false
+  thymeleaf:
+    cache: false
+  datasource:    url: jdbc:postgresql://wonderplace-dev-db.cluster-ro-cejxkxo3qsym.ap-northeast-2.rds.amazonaws.com:5432/ecommerce?currentSchema=ecomms
+    username: dev_user
+    password: dev_user
+    driver-class-name: org.postgresql.Driver
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml  mapper-locations: classpath:mybatis/mapper/*.xml
+
 server:  port: 8081

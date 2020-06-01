@@ -4,15 +4,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.service.TestService;
+
 @Controller
 public class TestController {
 
+	@Resource
+	TestService testService;
+	
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String test(Model model) {
 		
@@ -24,6 +31,10 @@ public class TestController {
 		list.add("D");
 		
 		model.addAttribute("list", list);
+		
+		String str = testService.getTest();
+		
+		model.addAttribute("dbtest", str);
 		
 		return "test";
 	}
