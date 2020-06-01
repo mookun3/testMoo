@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.CommonMapper">
+    <select id="getCommon" resultType="string">
+        SELECT ad.postcode
+		  FROM tmb_mem me
+		     , tmb_mem_addr ad
+		 WHERE 1=1
+		   AND me.mem_id = 'dhkim@crewmate.co.kr'
+		   AND me.mem_no = ad.mem_no
+    </select>
+</mapper>

@@ -24,6 +24,11 @@
     <button v-on:click="getListData()">getListData</button>
     
     <!-- <button v-on:click="testMethod()">v-on:click</button> -->
+    
+    <h2>DB TEST</h2>
+    <dl>
+        <dd th:text="${dbtest}"></dd>
+    </dl>
 </div>
 </body>
 
@@ -36,6 +41,7 @@ var app = new Vue({
 		text: "테스트 중입니다. 수정사항 재확인 부탁드립니다.",
 		list: [],
 		a: 1
+		
 	},
 	methods: {
 		testMethod: function() {
